@@ -1,6 +1,6 @@
 
 #### this module converts .txt file to .hex format 
-dependentfilename = "myfile.txt"    #our file of depedency
+dependentfilename = "myfile.txt"    #our depedency file
 try:
     file_txt = open(dependentfilename, 'r')
 except:
@@ -8,10 +8,20 @@ except:
     exit(0)
 
 
-targetfilename = "file_hex.hex"     #our file of target
 
 
+targetfilename = "file_hex.hex"     #our target file
+
+def main():
+    print("\n\t\t\t\tWelcome, this is a file format converter, \n\t\t\tplease enter the dependency file name along with its extension")
+    print("\t\t----------------------------------------------------------------------------------\n\n")
+    depdendency_file_name = input("\t\tEnter here: ")
+    target_file_name = input("\n\t\tEnter here: ")
+    depdendency_file_extension = depdendency_file_name[(depdendency_file_name.find('.')+1) : ]  #here we are detecting the extension of the dependency file
+    print(depdendency_file_extension)
+ 
     
+
 def txt_to_hex(file_txt, targetfilename):
     try:
         file_hex = open(targetfilename, 'x')    #creating a file for the first time
@@ -31,6 +41,7 @@ def txt_to_hex(file_txt, targetfilename):
     file_txt.close()
 
 
-
-txt_to_hex(file_txt, targetfilename)
+if __name__ == "__main__":
+    main()
+    txt_to_hex(file_txt, targetfilename)
 
