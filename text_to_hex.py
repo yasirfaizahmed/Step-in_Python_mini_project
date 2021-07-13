@@ -1,3 +1,15 @@
+########################################################################################################################
+############################### some definitions of the important valiables defined below ##############################
+
+#1. dependency_file_name - input file name from the user  (this file must be in the local folder and the name should match with the inputed name)
+#2. target_file_name - name of the file user wants to create (with extension)
+
+#3. dependency_file_extension - extension of the dependency file
+#4. target_file_extension - extension of the target file
+
+#5. dependency_file_obj - depedency file object
+#6. target_file_obj - target file object
+########################################################################################################################
 
 def main():
     print("\n\t\t\t\tWelcome, this is a file format converter, \n\t\t\tplease enter the dependency file name along with its extension")
@@ -47,9 +59,9 @@ def txt_to_bin(dependency_file_obj, target_file_obj):
     val = 0
     for lines in dependency_file_obj:
         for chrs in lines:
-            val = bin(ord(chrs))[2:]
+            val = bin(ord(chrs))[2:]  #converting each charecter to ASCII value, then to bin value, and chopping the '0b'
             if len(val)<8:
-               for i in range(8-len(val)):
+               for i in range(8-len(val)):  #adding extra '0' if the bin is not of 8bits
                    val = '0' + val
             target_file_obj.write(val + " ")
     target_file_obj.close()
