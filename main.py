@@ -23,23 +23,29 @@ def main():
     try:
         dependency_file_obj = open(dependency_file_name, 'r')
     except:
-        print("\t\tcould not find file named\n", dependency_file_name)
-    
-    #target file object creation
-    try:
-        target_file_obj = open(target_file_name, 'x')    #creating a file for the first time
-    except:
+        print("\t\tcould not find file named", dependency_file_name, "\n")
+        exit(0)
+
+    if not(target_file_extension == ".pdf"):    #dont create a target file if the extension turns out to be .pdf
+        #target file object creation
         try:
-            target_file_obj = open(target_file_name, 'w')    #if the file already exists
+            target_file_obj = open(target_file_name, 'x')    #creating a file for the first time
         except:
-            print("could not find file named", target_file_name, "\n")
-            exit(0)
+            try:
+                target_file_obj = open(target_file_name, 'w')    #if the file already exists
+            except:
+                print("could not find file named", target_file_name, "\n")
+                exit(0)
 
-
+    #calling funcitons from here
     if dependency_file_extension == ".txt" and target_file_extension == ".hex":
         txt_to_hex(dependency_file_obj, target_file_obj)
+
     if dependency_file_extension == ".txt" and target_file_extension == ".bin":
         txt_to_bin(dependency_file_obj, target_file_obj)
+
+    if dependency_file_extension == ".txt" and target_file_extension == ".pdf":
+        txt_to_pdf(dependency_file_obj, target_file_name)
 
  
     
@@ -69,6 +75,19 @@ def txt_to_bin(dependency_file_obj, target_file_obj):
 
     print("\n\n\t\t your .txt file has been converted to .bin file\n\n")
 
+def txt_to_pdf(dependency_file_obj, target_file_name):
+    try:
+        from fpdf import FPDF
+    except:
+        print("\t\tPlease install the 'fpdf' module in the current environment using command\n'pip install fpdf'\n")
+        exit(0)
+    
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_font("Arial", size=15)
+    for lines in dependency_file_obj:   #writing into the pdf file
+        pdf.cell(200, 10, txt=lines, ln=1, align='L')
+    pdf.output(target_file_name)
 
 
 
