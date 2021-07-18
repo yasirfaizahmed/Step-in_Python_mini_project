@@ -1,3 +1,5 @@
 /env
 /.vs
-*.hex
+/.pytest_cache
+/__pycache__
+
