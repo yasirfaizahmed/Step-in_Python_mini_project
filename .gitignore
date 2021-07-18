@@ -2,4 +2,5 @@
 /.vs
 /.pytest_cache
 /__pycache__
+/target
 

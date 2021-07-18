@@ -15,7 +15,7 @@ def main():
     print("\n\t\t\t\tWelcome, this is a file format converter, \n\t\t\tplease enter the dependency file name along with its extension")
     print("\t\t----------------------------------------------------------------------------------\n\n")
     dependency_file_name = input("\t\tEnter here: ")
-    target_file_name = input("\n\t\tEnter here: ")
+    target_file_name = "target/" + input("\n\t\tEnter here: ")
     dependency_file_extension = dependency_file_name[(dependency_file_name.find('.')) : ]  #seperating extensions
     target_file_extension = target_file_name[(target_file_name.find('.')) : ]     #seperating extensions
 
@@ -89,6 +89,7 @@ def txt_to_pdf(dependency_file_obj, target_file_name):
         pdf.cell(200, 10, txt=lines, ln=1, align='L')
     pdf.output(target_file_name)
 
+    print("\n\n\t\t your .txt file has been converted to .pdf file\n\n")
 
 
 if __name__ == "__main__":
