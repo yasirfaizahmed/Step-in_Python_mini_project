@@ -34,6 +34,10 @@ If OS is linux? run this
 
             pytest test_main.py
 
+6. To run the pylint on main for static code coverage
+            
+            pylint main.py
+
 
 ### Some details about the file structure and stuff
 
@@ -49,5 +53,7 @@ If OS is linux? run this
       
       Python version  = 3.9
       pytest version  = 6.2.4
+      pylint version  = 2.3.9
+      fpdf version    = 1.7.2
       no. of pytests  = 3
       
