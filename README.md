@@ -1,6 +1,17 @@
 # Step-in_Python_mini_project
 This is a python mini-project on file format converting
 
+### commands to run
+
+1. To run the main.py under your own environment
+
+            python main.py
+
+2. To run the pytest on main
+
+            pytest test_main.py
+
+
 ### Some details about the file structure and stuff
 
       main.py         ---> main program
