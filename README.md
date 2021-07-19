@@ -1,7 +1,9 @@
 # Step-in_Python_mini_project
 This is a python mini-project on file format converting
 
-### commands to run
+### Commands to run 
+
+(run these in the repo directory)
 
 1. To run the main.py under your own environment, make new environment in the repo directory
 
