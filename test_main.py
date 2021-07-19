@@ -62,6 +62,3 @@ def test_txt_to_pdf():
     os.remove("test_pdf.pdf")
     
 
-
-
-test_txt_to_pdf()
