@@ -10,7 +10,7 @@ def main():
         os.mkdir("target")
         target_file_name =  "target/" + input("\n\t\tEnter output file name here: ")
     except:
-        target_file_name =  "target/" + input("\n\t\tEnter output file name here: ")
+        target_file_name =  "target/" + input("\n\t\tEnter output file name here(with extension): ")
     dependency_file_extension = dependency_file_name[(dependency_file_name.find('.')) : ]  #seperating extensions
     target_file_extension = target_file_name[(target_file_name.find('.')) : ]     #seperating extensions
 
@@ -52,7 +52,7 @@ def txt_to_hex(dependency_file_obj, target_file_obj):
     target_file_obj.close()
     dependency_file_obj.close()
 
-    print("\n\n\t\t your .txt file has been converted to .hex file\n\n")
+    print("\n\n\t\t your .txt file has been converted to .hex file, check 'target' folder\n\n")
 
 def txt_to_bin(dependency_file_obj, target_file_obj):
     """converts text file to bin file"""
@@ -67,7 +67,7 @@ def txt_to_bin(dependency_file_obj, target_file_obj):
     target_file_obj.close()
     dependency_file_obj.close()
 
-    print("\n\n\t\t your .txt file has been converted to .bin file\n\n")
+    print("\n\n\t\t your .txt file has been converted to .bin file, check 'target' folder\n\n")
 
 def txt_to_pdf(dependency_file_obj, target_file_name):
     """converts text file to pdf file"""
@@ -84,7 +84,7 @@ def txt_to_pdf(dependency_file_obj, target_file_name):
         pdf.cell(200, 10, txt=lines, ln=1, align='L')
     pdf.output(target_file_name)
 
-    print("\n\n\t\t your .txt file has been converted to .pdf file\n\n")
+    print("\n\n\t\t your .txt file has been converted to .pdf file, check 'target' folder\n\n")
 
 
 if __name__ == "__main__":
