@@ -11,7 +11,9 @@ This is a python mini-project on file format converting
 
       /test           ---> contains all the template files for pytest(do not modify these)
       
+      /target         ---> is where your converted file will be loacted(will be created only after running main.py once atleast)
       
       Python version  = 3.9
       pytest version  = 6.2.4
+      no. of pytests  = 3
       
