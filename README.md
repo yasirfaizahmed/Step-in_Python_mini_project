@@ -1,6 +1,14 @@
 # Step-in_Python_mini_project
 This is a python mini-project on file format converting
 
+Can convert 
+
+**.txt to .hex**
+
+**.txt to .bin**
+
+**.txt to .pdf**
+
 ### Commands to run 
 
 (run these in the repo directory)
