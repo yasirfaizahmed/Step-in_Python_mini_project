@@ -3,13 +3,14 @@ import sys
 
 def main():
     print("\n\t\t\t\tWelcome, this is a file format converter, \n\t\t\tplease enter the dependency file name along with its extension")
+    print("\t\t\t\t For example type 'myfile.txt' ")
     print("\t\t----------------------------------------------------------------------------------\n\n")
-    dependency_file_name = input("\t\tEnter here: ")
+    dependency_file_name = input("\t\tEnter input file name here: ")
     try:
         os.mkdir("target")
-        target_file_name =  "target/" + input("\n\t\tEnter here: ")
+        target_file_name =  "target/" + input("\n\t\tEnter output file name here: ")
     except:
-        target_file_name =  "target/" + input("\n\t\tEnter here: ")
+        target_file_name =  "target/" + input("\n\t\tEnter output file name here: ")
     dependency_file_extension = dependency_file_name[(dependency_file_name.find('.')) : ]  #seperating extensions
     target_file_extension = target_file_name[(target_file_name.find('.')) : ]     #seperating extensions
 
